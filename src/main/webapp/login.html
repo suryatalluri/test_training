@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>WaveMaker</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!--fav icon-->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="//dc8jv2wm0s5zy.cloudfront.net/studio/8.0.0.2.1044/wmmobile/styles/css/wm-style.css">
+        <!-- theme --><link rel="stylesheet" href="themes/mobile/android/style.css"><!-- /theme -->
+        <link rel="stylesheet" href="app.css">
+    </head>
+
+    <body class="wm-app" data-ng-app="Application" id="ng-app" data-ng-controller="AppController">
+        <script src="wmProperties.js"></script>
+        <script src="cordova.js"></script>
+        <script src="//dc8jv2wm0s5zy.cloudfront.net/studio/8.0.0.2.1044/wmmobile/scripts/wm-libs.min.js"></script>
+        <script src="//dc8jv2wm0s5zy.cloudfront.net/studio/8.0.0.2.1044/wmmobile/scripts/wm-mobileloader.min.js"></script>
+        <script src="app.js"></script>
+        <div id="wm-app-content"></div>
+        <wm-spinner name="globalspinner" classname="global-spinner" caption=""></wm-spinner>
+        <toaster-container toaster-options="{'limit': 1,'time-out': 2000, 'position-class': 'toast-bottom-right'}"></toaster-container>
+    </body>
+</html>
