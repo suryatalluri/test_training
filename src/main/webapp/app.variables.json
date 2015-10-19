@@ -1687,6 +1687,7 @@
 		}
 	},
 	"Location": {
+		"name": "Location",
 		"owner": "App",
 		"dataSet": {
 			"coords": {
@@ -1715,5 +1716,26 @@
 		"vibrationtime": 2,
 		"category": "wm.DeviceVariable",
 		"_id": "wm-Location-wm.DeviceVariable-1445231958794"
+	},
+	"Camera": {
+		"owner": "App",
+		"dataSet": {
+			"imagePath": "resources/images/imagelists/default-image.png"
+		},
+		"dataBinding": {},
+		"service": "camera",
+		"operation": "captureImage",
+		"startUpdate": false,
+		"imageQuality": 80,
+		"imageEncodingType": "0",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"vibrationtime": 2,
+		"category": "wm.DeviceVariable",
+		"_id": "wm-Camera-wm.DeviceVariable-1445232944078"
 	}
 }
