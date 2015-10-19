@@ -1,0 +1,223 @@
+<style id="Main.css">
+
+</style>
+<script id="Main.js">
+Application.$controller("LinkedInOAuthController", ["$scope", function($scope) {
+    "use strict";
+
+    /* 
+     * This function will be invoked when any of this prefab's property is changed
+     * @key: property name
+     * @newVal: new value of the property
+     * @oldVal: old value of the property
+     */
+    function propertyChangeHandler(key, newVal, oldVal) {
+            /*
+		switch (key) {
+			case "prop1":
+				// do something with newVal for property 'prop1'
+				break;
+			case "prop2":
+				// do something with newVal for property 'prop2'
+				break;
+		}
+		*/
+        }
+        /* register the property change handler */
+    $scope.propertyManager.add($scope.propertyManager.ACTIONS.CHANGE, propertyChangeHandler);
+
+    $scope.OAuthHandlerServiceGetLoginURLonSuccess = function(variable, data) {
+
+        window.location = data;
+    };
+
+    $scope.OAuthHandlerServiceGetAccessTokenonSuccess = function(variable, data) {
+
+        if (data === "") {
+            $scope.Variables.OAuthHandlerServiceGetLoginURL.update();
+        } else {
+            $scope.accesstoken = data;
+        }
+    };
+
+}]);
+</script>
+<script id="Main.variables.json">
+var _MainPage_Variables_ ={
+	"supportedLocale": {
+		"name": "supportedLocale",
+		"type": "string",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"en": "English"
+		},
+		"dataBinding": {
+			"dataValue": ""
+		},
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-wm.Variable1402640443182"
+	},
+	"OAuthHandlerServiceGetAccessToken": {
+		"name": "OAuthHandlerServiceGetAccessToken",
+		"type": "java.lang.String",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": {},
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "OAuthHandlerService",
+		"operation": "getAccessToken",
+		"operationType": null,
+		"startUpdate": true,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "Javascript",
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"httpMethod": "POST",
+			"name": "getAccessToken",
+			"parameters": [],
+			"relativePath": "/oAuthHandler/accessToken"
+		},
+		"_id": "wm-wm.ServiceVariable1431005361916"
+	},
+	"OAuthHandlerServiceGetCallbackURL": {
+		"name": "OAuthHandlerServiceGetCallbackURL",
+		"type": "java.lang.String",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": {},
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "OAuthHandlerService",
+		"operation": "getCallbackURL",
+		"operationType": null,
+		"startUpdate": true,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"httpMethod": "POST",
+			"name": "getCallbackURL",
+			"parameters": [],
+			"relativePath": "/oAuthHandler/callbackURL"
+		},
+		"_id": "wm-wm.ServiceVariable1431005361917"
+	},
+	"OAuthHandlerServiceGetLoginURL": {
+		"name": "OAuthHandlerServiceGetLoginURL",
+		"type": "java.lang.String",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": {},
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "OAuthHandlerService",
+		"operation": "getLoginURL",
+		"operationType": null,
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "Javascript",
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"httpMethod": "POST",
+			"name": "getLoginURL",
+			"parameters": [],
+			"relativePath": "/oAuthHandler/loginURl"
+		},
+		"_id": "wm-wm.ServiceVariable1431005361917"
+	},
+	"OAuthHandlerServiceCallback": {
+		"name": "OAuthHandlerServiceCallback",
+		"type": ".void",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": {},
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "OAuthHandlerService",
+		"operation": "callback",
+		"operationType": null,
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"httpMethod": "GET",
+			"name": "callback",
+			"parameters": [],
+			"relativePath": "/oAuthHandler/callback"
+		},
+		"_id": "wm-wm.ServiceVariable1431005361917"
+	}
+}
+</script>
+<script id="Main.html" type="text/ng-template">
+<wm-page data-ng-controller="LinkedInOAuthController" name="page1">
+    <wm-view class="container" backgroundcolor="#fff" name="view1">
+        <wm-form title="OAuth Configuration" class="panel-default" name="form1" height="220">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn name="gridcolumn1" columnwidth="2">
+                        <wm-label name="label7" caption="Callback URL" fontweight="bold"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn4">
+                        <wm-label name="label8" caption="bind:Variables.OAuthHandlerServiceGetCallbackURL.dataSet.value"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn name="gridcolumn2" columnwidth="2">
+                        <wm-label name="label5" caption="Access Token" fontweight="bold"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn5">
+                        <wm-label name="label6" caption="bind:accesstoken"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn5_1">
+                        <wm-label name="label5_1" caption="Requires Header" fontweight="bold"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn6">
+                        <wm-label name="label6_1" caption="bind:'Authorization : Bearer&amp;nbsp;' + accesstoken" display="inline"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-form>
+    </wm-view>
+</wm-page>
+</script>

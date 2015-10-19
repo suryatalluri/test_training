@@ -1,10 +1,8 @@
-<wm-page data-ng-controller="MainPageController" name="mainpage">
-  <wm-left-panel content="leftnav" columnwidth="2" name="left_panel1"></wm-left-panel>
-  <wm-mobile-navbar name="mobile_navbar1" title="Title" backbuttoniconclass="fa fa-chevron-left" leftnavpaneliconclass="fa fa-bars">
-    <wm-button class="btn-transparent" caption="" type="button" name="AddButton" iconclass="glyphicon glyphicon-plus"></wm-button>
-  </wm-mobile-navbar>
-  <wm-content name="content1">
-    <wm-page-content columnwidth="12" name="page_content1"></wm-page-content>
-  </wm-content>
-  <wm-mobile-tabbar dataset="home,music,edit" name="mobile_tabbar1"></wm-mobile-tabbar>
+<wm-page data-ng-controller="MainPageController" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-buttongroup name="buttongroup2"></wm-buttongroup>
+            <wm-prefab prefabname="googlemaps" name="googlemaps1"></wm-prefab>
+        </wm-page-content>
+    </wm-content>
 </wm-page>

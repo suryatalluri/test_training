@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="TestDB" type="DataService" springFile="TestDB.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.test_training.testdb.Table1">
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="table2" typeRef="com.test_training.testdb.Table2" isList="false" allowNull="false"/>
+            <element name="column2" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="column3" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_training.testdb.Table2">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="column2" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="table1" typeRef="com.test_training.testdb.Table1" isList="false" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

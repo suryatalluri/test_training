@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.test_training.testdb">
+    <class entity-name="com.test_training.testdb.Table1" table="TABLE1" schema="TestDB">
+        <id name="id" type="integer">
+            <column name="ID" length="1" not-null="true" precision="19"/>
+            <generator class="foreign">
+                <param name="property">table2</param>
+            </generator>
+        </id>
+        <property name="column2" type="integer">
+            <column name="COLUMN2" length="1" not-null="false" precision="19" default="'0'"/>
+        </property>
+        <property name="column3" type="integer">
+            <column name="COLUMN3" length="1" not-null="false" precision="19" default="'0'"/>
+        </property>
+        <one-to-one name="table2" class="com.test_training.testdb.Table2" constrained="true"/>
+    </class>
+    <class entity-name="com.test_training.testdb.Table2" table="TABLE2" schema="TestDB">
+        <id name="id" type="integer">
+            <column name="ID" length="1" not-null="true" precision="19"/>
+            <generator class="identity"/>
+        </id>
+        <property name="column2" type="integer">
+            <column name="COLUMN2" length="1" not-null="false" precision="19" default="'0'"/>
+        </property>
+        <one-to-one name="table1" class="com.test_training.testdb.Table1"/>
+    </class>
+</hibernate-mapping>

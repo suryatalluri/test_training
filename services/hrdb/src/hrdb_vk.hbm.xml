@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hrdb">
+    <class entity-name="com.hrdb.Employee" table="EMPLOYEE" name="com.hrdb.Employee" schema="PUBLIC">
+        <id name="eid" type="integer">
+            <column name="EID" length="255" not-null="true" precision="19"/>
+            <generator class="identity"/>
+        </id>
+        <property name="firstname" type="string">
+            <column name="FIRSTNAME" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="LASTNAME" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="street" type="string">
+            <column name="STREET" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="city" type="string">
+            <column name="CITY" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="state" type="string">
+            <column name="STATE" length="2" not-null="false" precision="19"/>
+        </property>
+        <property name="zip" type="string">
+            <column name="ZIP" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="birthdate" type="date">
+            <column name="BIRTHDATE" length="10" not-null="false" precision="19"/>
+        </property>
+        <property name="picurl" type="string">
+            <column name="PICURL" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="jobtitle" type="string">
+            <column name="JOBTITLE" length="40" not-null="false" precision="19"/>
+        </property>
+        <property name="tenantid" type="integer">
+            <column name="TENANTID" length="255" not-null="false" precision="19"/>
+        </property>
+        <many-to-one name="department" class="com.hrdb.Department" fetch="select">
+            <column name="DEPTID" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+        <many-to-one name="employeeByManagerid" class="com.hrdb.Employee" fetch="select">
+            <column name="MANAGERID" length="255" not-null="false" precision="19"/>
+        </many-to-one>
+        <set name="employeesForManagerid" table="EMPLOYEE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="MANAGERID"/>
+            </key>
+            <one-to-many class="com.hrdb.Employee"/>
+        </set>
+        <set name="vacations" table="EMPLOYEE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPID"/>
+            </key>
+            <one-to-many class="com.hrdb.Vacation"/>
+        </set>
+    </class>
+    <class entity-name="com.hrdb.Vacation" table="VACATION" name="com.hrdb.Vacation" schema="PUBLIC">
+        <id name="id" type="integer">
+            <column name="ID" length="255" not-null="true" precision="19"/>
+            <generator class="identity"/>
+        </id>
+        <property name="startdate" type="date">
+            <column name="STARTDATE" length="10" not-null="false" precision="19"/>
+        </property>
+        <property name="enddate" type="date">
+            <column name="ENDDATE" length="10" not-null="false" precision="19"/>
+        </property>
+        <property name="tenantid" type="integer">
+            <column name="TENANTID" length="255" not-null="false" precision="19"/>
+        </property>
+        <many-to-one name="employee" class="com.hrdb.Employee" fetch="select">
+            <column name="EMPID" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+    </class>
+    <class entity-name="com.hrdb.Department" table="DEPARTMENT" name="com.hrdb.Department" schema="PUBLIC">
+        <id name="deptid" type="integer">
+            <column name="DEPTID" length="255" not-null="true" precision="19"/>
+            <generator class="identity"/>
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="budget" type="integer">
+            <column name="BUDGET" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="q1" type="integer">
+            <column name="Q1" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="q2" type="integer">
+            <column name="Q2" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="q3" type="integer">
+            <column name="Q3" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="q4" type="integer">
+            <column name="Q4" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="deptcode" type="string">
+            <column name="DEPTCODE" length="20" not-null="false" precision="19"/>
+        </property>
+        <property name="location" type="string">
+            <column name="LOCATION" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="tenantid" type="integer">
+            <column name="TENANTID" length="255" not-null="false" precision="19"/>
+        </property>
+        <set name="employees" table="DEPARTMENT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DEPTID"/>
+            </key>
+            <one-to-many class="com.hrdb.Employee"/>
+        </set>
+    </class>
+    <class entity-name="com.hrdb.User" table="USER" name="com.hrdb.User" schema="PUBLIC">
+        <id name="userid" type="integer">
+            <column name="USERID" length="255" not-null="true" precision="19"/>
+            <generator class="identity"/>
+        </id>
+        <property name="username" type="string">
+            <column name="USERNAME" length="20" not-null="false" precision="19"/>
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="20" not-null="false" precision="19"/>
+        </property>
+        <property name="role" type="string">
+            <column name="ROLE" length="20" not-null="false" precision="19"/>
+        </property>
+        <property name="tenantid" type="integer">
+            <column name="TENANTID" length="255" not-null="false" precision="19"/>
+        </property>
+    </class>
+</hibernate-mapping>

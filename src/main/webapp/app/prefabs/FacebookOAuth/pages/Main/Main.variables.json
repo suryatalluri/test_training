@@ -1,0 +1,142 @@
+{
+	"supportedLocale": {
+		"name": "supportedLocale",
+		"type": "string",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"en": "English"
+		},
+		"dataBinding": {
+			"dataValue": ""
+		},
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-wm.Variable1402640443182"
+	},
+	"OAuthHandlerServiceGetCallbackURL": {
+		"name": "OAuthHandlerServiceGetCallbackURL",
+		"type": "java.lang.String",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": {},
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "OAuthHandlerService",
+		"operation": "getCallbackURL",
+		"operationType": null,
+		"startUpdate": true,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"httpMethod": "POST",
+			"name": "getCallbackURL",
+			"parameters": [],
+			"relativePath": "/oAuthHandler/callbackURL"
+		},
+		"_id": "wm-wm.ServiceVariable1431009822680"
+	},
+	"OAuthHandlerServiceGetAccessToken": {
+		"name": "OAuthHandlerServiceGetAccessToken",
+		"type": "java.lang.String",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": {},
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "OAuthHandlerService",
+		"operation": "getAccessToken",
+		"operationType": null,
+		"startUpdate": true,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "Javascript",
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"httpMethod": "POST",
+			"name": "getAccessToken",
+			"parameters": [],
+			"relativePath": "/oAuthHandler/accessToken"
+		},
+		"_id": "wm-wm.ServiceVariable1431009822682"
+	},
+	"OAuthHandlerServiceGetLoginURL": {
+		"name": "OAuthHandlerServiceGetLoginURL",
+		"type": "java.lang.String",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": {},
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "OAuthHandlerService",
+		"operation": "getLoginURL",
+		"operationType": null,
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "Javascript",
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"httpMethod": "POST",
+			"name": "getLoginURL",
+			"parameters": [],
+			"relativePath": "/oAuthHandler/loginURl"
+		},
+		"_id": "wm-wm.ServiceVariable1431009822685"
+	},
+	"OAuthHandlerServiceCallback": {
+		"name": "OAuthHandlerServiceCallback",
+		"type": ".void",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": {},
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "OAuthHandlerService",
+		"operation": "callback",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"httpMethod": "GET",
+			"name": "callback",
+			"parameters": [],
+			"relativePath": "/oAuthHandler/callback"
+		},
+		"_id": "wm-wm.ServiceVariable1431009822685"
+	}
+}

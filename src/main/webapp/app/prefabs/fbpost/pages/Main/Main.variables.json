@@ -1,0 +1,72 @@
+{
+  "supportedLocale": {
+    "name": "supportedLocale",
+    "type": "string",
+    "isList": false,
+    "owner": "App",
+    "dataSet": {
+      "en": "English"
+    },
+    "dataBinding": [
+      {
+        "name": "dataSet",
+        "type": "object",
+        "fields": [
+          {
+            "name": "dataValue",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "saveInPhonegap": false,
+    "category": "wm.Variable",
+    "_id": "wm-wm.Variable1402640443182"
+  },
+  "FileServiceUploadFile": {
+    "isList": false,
+    "owner": "Page",
+    "dataSet": {
+      "dataValue": ""
+    },
+    "dataBinding": [
+      {
+        "name": "dataBinding",
+        "type": "object",
+        "fields": []
+      }
+    ],
+    "saveInPhonegap": false,
+    "firstRow": 0,
+    "maxResults": 20,
+    "designMaxResults": 10,
+    "service": "FileService",
+    "operation": "uploadFile",
+    "startUpdate": false,
+    "autoUpdate": true,
+    "inFlightBehavior": "executeLast",
+    "transformationRequired": false,
+    "serviceType": "JavaService",
+    "category": "wm.ServiceVariable",
+    "isDefault": true,
+    "wmServiceOperationInfo": {
+      "methodType": "post",
+      "name": "uploadFile",
+      "relativePath": "/file/uploadFile",
+      "consumes": [
+        "multipart/form-data"
+      ],
+      "parameters": [
+        {
+          "name": "files",
+          "parameterType": "formData"
+        },
+        {
+          "name": "relativePath",
+          "parameterType": "query"
+        }
+      ]
+    },
+    "_id": "wm-FileServiceUploadFile-wm.ServiceVariable-1440406140580"
+  }
+}
